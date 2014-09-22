@@ -91,7 +91,7 @@ prepare_km:
 	@mkdir -p $(GFX_DEMOS_EXECPATH)
 	@echo $(shell echo $(BUILD)$(OMAPES)) > $(GFXLIB_INSTALL_INFOFILE)
 ############################### CLEAN ##################################
-clean_km: cleankernelmodule devmem2clean
+clean_km: cleankernelmodule
 
 builddevmem2:
 	@echo "building devmem2..."
