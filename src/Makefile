@@ -4,11 +4,11 @@ include Makefile.SDK
 
 .PHONY: all
 
-clean: clean_km clean_sdk
+clean: clean_km
 
-all: all_km all_sdk
+all: all_km
 
-install: install_km install_sdk
+install: install_km
 
 ############################# HELP ##################################
 help:
