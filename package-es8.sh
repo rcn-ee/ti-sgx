@@ -15,12 +15,14 @@ fi
 package="ti-sgx"
 base_dir="./"
 
-if [ -f ${base_dir}src/gfx_rel_es8.x/pvrsrvkm.ko ] ; then
+es="es8"
+
+if [ -f ${base_dir}src/gfx_rel_${es}.x/pvrsrvkm.ko ] ; then
 
 	#modules
-	cp -v ${base_dir}src/gfx_rel_es8.x/pvrsrvkm.ko ${base_dir}
-	cp -v ${base_dir}src/gfx_rel_es8.x/omaplfb.ko ${base_dir}
-	cp -v ${base_dir}src/gfx_rel_es8.x/bufferclass_ti.ko ${base_dir}
+	cp -v ${base_dir}src/gfx_rel_${es}.x/pvrsrvkm.ko ${base_dir}
+	cp -v ${base_dir}src/gfx_rel_${es}.x/omaplfb.ko ${base_dir}
+	cp -v ${base_dir}src/gfx_rel_${es}.x/bufferclass_ti.ko ${base_dir}
 
 	#readme
 	cp -v ${base_dir}src/GFX_Linux_KM/README ${base_dir}
@@ -30,16 +32,16 @@ if [ -f ${base_dir}src/gfx_rel_es8.x/pvrsrvkm.ko ] ; then
 	echo "Homepage: https://github.com/rcn-ee/${package}" >> ${base_dir}control
 	echo "Standards-Version: 3.9.2" >> ${base_dir}control
 	echo "" >> ${base_dir}control
-	echo "Package: ${package}-modules-${uname_r}" >> ${base_dir}control
+	echo "Package: ${package}-${es}-modules-${uname_r}" >> ${base_dir}control
 	echo "Version: 1${distro}" >> ${base_dir}control
 	echo "Pre-Depends: linux-image-${uname_r}" >> ${base_dir}control
 	echo "Depends: linux-image-${uname_r}" >> ${base_dir}control
 	echo "Maintainer: Robert Nelson <robertcnelson@gmail.com>" >> ${base_dir}control
 	echo "Architecture: ${dpkg_arch}" >> ${base_dir}control
 	echo "Readme: README" >> ${base_dir}control
-	echo "Files: pvrsrvkm.ko /lib/modules/${uname_r}/extra/es8.x/" >> ${base_dir}control
-	echo " omaplfb.ko /lib/modules/${uname_r}/extra/es8.x/" >> ${base_dir}control
-	echo " bufferclass_ti.ko /lib/modules/${uname_r}/extra/es8.x/" >> ${base_dir}control
+	echo "Files: pvrsrvkm.ko /lib/modules/${uname_r}/extra/${es}.x/" >> ${base_dir}control
+	echo " omaplfb.ko /lib/modules/${uname_r}/extra/${es}.x/" >> ${base_dir}control
+	echo " bufferclass_ti.ko /lib/modules/${uname_r}/extra/${es}.x/" >> ${base_dir}control
 	echo "Description: ${package} modules" >> ${base_dir}control
 	echo " Kernel modules for ${package} devices" >> ${base_dir}control
 	echo "" >> ${base_dir}control
