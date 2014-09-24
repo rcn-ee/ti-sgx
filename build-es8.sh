@@ -13,5 +13,5 @@ fi
 
 mkdir -p ./gfx_rel_es8.x || true
 make ARCH=arm ${make_options} clean
-make ARCH=arm ${make_options} BUILD=release OMAPES=8.x FBDEV=no all
+make ARCH=arm ${make_options} BUILD=release OMAPES=8.x FBDEV=yes all
 #
