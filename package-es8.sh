@@ -30,7 +30,7 @@ if [ -f ${base_dir}src/gfx_rel_${es}.x/pvrsrvkm.ko ] ; then
 	echo "Section: misc" > ${base_dir}control
 	echo "Priority: optional" >> ${base_dir}control
 	echo "Homepage: https://github.com/rcn-ee/${package}" >> ${base_dir}control
-	echo "Standards-Version: 3.9.2" >> ${base_dir}control
+	echo "Standards-Version: 3.9.6" >> ${base_dir}control
 	echo "" >> ${base_dir}control
 	echo "Package: ${package}-${es}-modules-${uname_r}" >> ${base_dir}control
 	echo "Version: 1${distro}" >> ${base_dir}control
