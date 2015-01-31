@@ -62,7 +62,7 @@ GFXLIB_INSTALL_INFOFILE=$(GFX_DEMOS_EXECPATH)/gfxinstallinfo.txt
 .PHONY: clean_km cleankernelmodule
 .PHONY: help_km
 
-all_km: prepare_km buildkernel builddevmem2
+all_km: prepare_km buildkernel
 
 buildkernel:
 	@echo "building the sgx kernel modules..."
@@ -91,7 +91,7 @@ prepare_km:
 	@mkdir -p $(GFX_DEMOS_EXECPATH)
 	@echo $(shell echo $(BUILD)$(OMAPES)) > $(GFXLIB_INSTALL_INFOFILE)
 ############################### CLEAN ##################################
-clean_km: cleankernelmodule devmem2clean
+clean_km: cleankernelmodule
 
 builddevmem2:
 	@echo "building devmem2..."
